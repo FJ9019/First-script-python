@@ -17,15 +17,20 @@ while loop:
 
     valeur_int = int(valeur_utilisateur)
 
-    if valeur_int > mystere:
-        print("Plus grand que le nombre mystere")
-        essai += 1
-        score -= 10
-    elif valeur_int < mystere:
-        print("Plus petit que le nombre mystere")
-        essai += 1
-        score -= 10
+    if essai <= 10:
+       if valeur_int > mystere:
+           print("Plus grand que le nombre mystere")
+           essai += 1
+           score -= 10
+       elif valeur_int < mystere:
+           print("Plus petit que le nombre mystere")
+           essai += 1
+           score -= 10
+       else:
+           print(f"Félicitation vous avez trouvé le nombre mystère, le nombre mystère est {valeur_int}")
+           print(f"Nombre d'essais : {essai} \nSCore : {score}")
+           loop = False
     else:
-        print(f"Félicitation vous avez trouvé le nombre mystère, le nombre mystère est {valeur_int}")
-        print(f"Nombre d'essais : {essai} \nSCore : {score}")
         loop = False
+        print(f"Désolé vous avez manqué le nombre mystère, c'était {mystere}")       
+        print(f"Nombre d;essais : {essai} \nScore : {score}")         
